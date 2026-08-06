@@ -9,8 +9,8 @@
         rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Okele Club</title>
-    <link rel="shortcut icon" href="images/restaurant-logo-png-favpng-p0qdMJe2rC3e2J1DEAF0HbZzF.jpg" type="image/x-icon">
+    <title>Okele & Co.</title>
+    <link rel="shortcut icon" href="images/okele-&-co-logo.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -18,21 +18,23 @@
     <nav>
         <h2>OKELE & CO.</h2>
         <div class="nav-links">
-            <li>
-                <label for="home">Home</label>
-            </li>
+            <ul>
+                <li>
+                    <label for="home">Home</label>
+                </li>
 
-            <li>
-                <label for="menu">Menu</label>
-            </li>
+                <li>
+                    <label for="menu">Menu</label>
+                </li>
 
-            <li>
-                <label for="about">About</label>
-            </li>
+                <li>
+                    <label for="prices">Pricing</label>
+                </li>
 
-            <li>
-                <label for="catering">Shop</label>
-            </li>
+                <li>
+                    <label for="about">About Us</label>
+                </li>
+            </ul>
         </div>
         <div></div>
     </nav>
@@ -40,8 +42,8 @@
     <div class="slide-container">
         <input name="nav-link" id="home" type="radio" checked>
         <input name="nav-link" id="menu" type="radio">
+        <input name="nav-link" id="prices" type="radio">
         <input name="nav-link" id="about" type="radio">
-        <input name="nav-link" id="catering" type="radio">
         <div class="slide-track">
             <div class="hero-container">
                 <div class="hero-section">
@@ -63,11 +65,13 @@
                 </div>
             </div>
 
+            <!-- MENU -->
             <div class="menu-container">
+                <img id="menu-bg" src="/images/leaf-overlay.png" alt="">
                 <h2>MENU</h2>
                 <div class="dish-container">
                     <div class="dish dish-one">
-                        <img src="/images/menu/ChatGPT Image Aug 6, 2026, 10_55_50 AM.png" alt="">
+                        <img src="/images/menu/amala.png" alt="">
                         <p class="dish-name">AMALA</p>
                     </div>
 
@@ -82,38 +86,103 @@
                     </div>
 
                     <div class="dish dish-four">
-                        <img src="images/menu/ChatGPT Image Aug 6, 2026, 11_27_32 AM.png" alt="">
+                        <img src="images/menu/rice and beans.png" alt="">
                         <p class="dish-name">RICE & BEANS</p>
                     </div>
 
                     <div class="dish dish-five">
-                        <img src="" alt="">
-                        <p class="dish-name"></p>
+                        <img src="/images/menu/beans.png" alt="">
+                        <p class="dish-name">EWA</p>
                     </div>
 
                     <div class="dish dish-six">
-                        <img src="" alt="">
-                        <p class="dish-name"></p>
+                        <img src="/images/menu/beef suya.png" alt="">
+                        <p class="dish-name">BEEF SUYA</p>
                     </div>
 
                     <div class="dish dish-seven">
-                        <img src="" alt="">
-                        <p class="dish-name"></p>
+                        <img src="/images/menu/eba.png" alt="">
+                        <p class="dish-name">EBA</p>
                     </div>
 
                     <div class="dish dish-eight">
-                        <img src="" alt="">
-                        <p class="dish-name"></p>
+                        <img src="/images/menu/pepper soup.png" alt="">
+                        <p class="dish-name">PEPPER SOUP</p>
                     </div>
                 </div>
             </div>
+
+
+            <!-- PRICES -->
+            <div class="price-container">
+                <div class="price-box">
+                    <h2>PRICING</h2>
+                    <div class="meal-item">
+                        <div class="meal-name">Amala Pack</div>
+                        <div class="meal-price">₦3,500</div>
+                    </div>
+                    <span>Two wraps, meat, ponmo</span>
+
+                    <div class="meal-item">
+                        <div class="meal-name">Ofada Combo</div>
+                        <div class="meal-price">₦2,500</div>
+                    </div>
+                    <span>Two scoops, egg, beef</span>
+
+                    <div class="meal-item">
+                        <div class="meal-name">Semo Pack</div>
+                        <div class="meal-price">₦4,200</div>
+                    </div>
+                    <span>Two wraps, beef, ponmo</span>
+
+                    <div class="meal-item">
+                        <div class="meal-name">Rice & Beans Combo</div>
+                        <div class="meal-price">₦5,000</div>
+                    </div>
+                    <span>Fish, plantain, coleslaw</span>
+
+                    <div class="meal-item">
+                        <div class="meal-name">Beans Combo</div>
+                        <div class="meal-price">₦3,500</div>
+                    </div>
+                    <span>Sliced plantain, grilled fish, veggies</span>
+
+                    <div class="meal-item">
+                        <div class="meal-name">Beef Suya Pack</div>
+                        <div class="meal-price">₦1,500</div>
+                    </div>
+                    <span>Beef sticks, limes</span>
+
+                    <div class="meal-item">
+                        <div class="meal-name">Eba Pack</div>
+                        <div class="meal-price">₦3,200</div>
+                    </div>
+                    <span>Dry fish, ponmo</span>
+
+                    <div class="meal-item">
+                        <div class="meal-name">Pepper Soup Combo</div>
+                        <div class="meal-price">₦4,000</div>
+                    </div>
+                    <span>Sliced carrot, chicken</span>
+                </div>
+            </div>
+
+
+
+
+            <!-- ABOUT US -->
+            <!-- <div class="about-us-container">
+            <p>lorem500</p>
+          </div> -->
         </div>
     </div>
+
 
     <div class="page-dots">
         <div class="dot dot-one"></div>
         <div class="dot dot-two"></div>
         <div class="dot dot-three"></div>
+        <div class="dot dot-four"></div>
     </div>
 
 </body>

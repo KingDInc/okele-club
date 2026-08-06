@@ -20,10 +20,22 @@
 
 
   body {
-      background-color: var(--bg-color);
+      background:
+          radial-gradient(circle at top left,
+              #5b40319f 0%,
+              rgba(91, 64, 49, 0.233) 10%,
+              transparent 35%),
+          radial-gradient(circle at bottom right,
+              #6a4c3a6e 0%,
+              rgba(106, 76, 58, 0.35) 15%,
+              transparent 70%), #2D1E16;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
       color: var(--font-color);
-      padding: 0px 70px;
+      padding: 0px 20px;
       /* overflow: hidden; */
+      /* background-image: ; */
   }
 
   nav {
@@ -32,6 +44,7 @@
       position: fixed;
       justify-self: center;
       width: 100%;
+      z-index: 100;
   }
 
   nav h2 {
@@ -44,16 +57,14 @@
       letter-spacing: 10px;
   }
 
-  .nav-links {
+  .nav-links ul {
       display: flex;
       gap: 80px;
       margin-top: 35px;
   }
 
-  .nav-links li,
-  .nav-links li a {
+  .nav-links li {
       list-style: none;
-      text-decoration: none;
       color: var(--font-color);
       font-size: 25px;
       font-family: var(--nav-stylish-font);
@@ -62,25 +73,77 @@
       transition: 0.4s;
   }
 
-  .nav-links a:hover {
-      color: var(--deep-font-color)
+  .nav-links label:hover {
+      color: var(--deep-font-color);
+      cursor: pointer;
+  }
+
+  /* SLIDE EFFECT  */
+  #home:checked~.slide-track {
+      transform: translateX(0vw);
+  }
+
+  body:has(#home:checked) .dot-one {
+      opacity: 100%;
+  }
+
+  #menu:checked~.slide-track {
+      transform: translateX(-100vw);
+  }
+
+  body:has(#menu:checked) .dot-two {
+      opacity: 100%;
+  }
+
+  #prices:checked~.slide-track {
+      transform: translateX(-200vw)
+  }
+
+  body:has(#prices:checked) .dot-three {
+      opacity: 100%;
+  }
+
+  #about:checked~.slide-track {
+      transform: translateX(-300vw);
+  }
+
+  body:has(#about:checked) .dot-four {
+      opacity: 100%;
   }
 
   /* HERO-SECTION */
   .slide-container {
       display: flex;
-      width: calc(100% * 3);
-      height: 75vh;
-      /* gap: 650px; */
+      width: 100vw;
+      height: 96vh;
+      justify-items: center;
+      /* overflow:hidden; */
+  }
+
+  .slide-container input {
+      display: none;
+  }
+
+  .slide-track {
+      width: 300vw;
+      display: flex;
+      transition: 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+      scrollbar-width: none;
+  }
+
+  .slide-track::-webkit-scrollbar {
+      display: none;
+      outline: none;
   }
 
   .hero-container {
       display: block;
+      width: 100vw;
   }
 
   .hero-section {
       display: flex;
-      gap: 40px;
+      gap: 30px;
       justify-content: center;
       align-items: center;
       height: 100%;
@@ -88,6 +151,7 @@
 
   .hero-text {
       text-align: center;
+      margin-top: -60px;
   }
 
   .hero-text h2 {
@@ -113,21 +177,22 @@
   }
 
   .hero-img img {
-      width: 800px;
-      margin-top: 20px;
+      width: 1000px;
+      margin-top: -20px;
+      /* margin-left:-50px; */
   }
 
   .img-list {
       display: flex;
       gap: 40px;
       position: absolute;
-      left: 290px;
+      left: 250px;
       bottom: 180px;
   }
 
   .img-list img {
-      width: 110px;
-      height: auto;
+      width: 90px;
+      height: 90px;
       border-radius: 10px;
       transition: all 0.5s;
   }
@@ -136,13 +201,44 @@
       transform: scale(1.06) translateY(-5px);
   }
 
+  .page-dots {
+      display: flex;
+      position: fixed;
+      gap: 30px;
+      width: fit-content;
+      justify-self: center;
+      bottom: 90px;
+  }
+
+  .dot {
+      background-color: grey;
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      opacity: 40%;
+      transition: 0.6s ease-out;
+
+  }
+
 
   /* MENU */
   .menu-container {
       align-self: center;
       width: 100vw;
       justify-items: center;
-      
+      /* position: relative; */
+  }
+
+  #menu-bg {
+      position: absolute;
+      top: 0;
+      right: 380px;
+      margin-top: -20px;
+      transition: 0.5s ease-out;
+  }
+
+  #menu-bg:hover {
+      transform: scale(1.05);
   }
 
   .dish-container {
@@ -152,16 +248,104 @@
       margin: 40px 40px;
   }
 
-.menu-container h2 {
+  .menu-container h2 {
       font-size: 50px;
       font-family: var(--logo-font);
       font-weight: 700;
       letter-spacing: 15px;
-}
+  }
 
-.dish {
-    background-color:rgba(128, 128, 128, 0.562);
-    border-radius: 20px;
-    height: 75px;
-    width: 50px;
-}
+  .dish {
+      background-color: rgba(128, 128, 128, 0.185);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      height: 250px;
+      width: 200px;
+      opacity: 90%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: start;
+      position: relative;
+      overflow: hidden;
+  }
+
+  .dish img {
+      width: 90%;
+      margin-top: 20px;
+      transition: all 0.4s ease-out;
+  }
+
+  .dish-name {
+      font-family: var(--tiny-font);
+      font-size: 20px;
+      justify-self: center;
+      font-weight: 500;
+      letter-spacing: 4px;
+      position: absolute;
+      bottom: 20px;
+  }
+
+  .dish-three img {
+      width: 120%;
+  }
+
+  .dish-eight img {
+      width: 100%;
+  }
+
+  .dish img:hover {
+      transform: scale(1.10);
+  }
+
+
+
+  /* PRICING */
+  .price-container {
+      align-self: center;
+      width: 100vw;
+      justify-items: center;
+  }
+
+  .price-box {
+      border: 1px dashed var(--font-color);
+      padding: 40px;
+      border-radius: 30px;
+      width: 45%;
+      height: auto;
+  }
+
+  .price-box h2 {
+      font-size: 50px;
+      font-family: var(--logo-font);
+      font-weight: 700;
+      letter-spacing: 15px;
+      text-align: center;
+      margin-top: 15px;
+  }
+
+  .meal-item {
+      display: flex;
+      justify-content: space-between;
+      font-family: var(--logo-font);
+      font-weight: 600;
+      font-size: 30px;
+      margin-top: 20px;
+  }
+
+  .meal-price {
+      color: #f1a125;
+      /* margin-top:20px; */
+  }
+
+  .price-box span {
+      font-family: var(--tiny-font);
+      font-size: 20px;
+      padding-bottom: 50px;
+      font-weight: 100;
+  }
+
+  /* ABOUT US */
+  /* .about-us-container {
+    width: 100vw;
+  } */
