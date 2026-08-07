@@ -8,6 +8,7 @@
       box-sizing: border-box;
   }
 
+
   :root {
       --bg-color: #2D1E16;
       --font-color: #faf9db;
@@ -34,8 +35,9 @@
       background-size: cover;
       color: var(--font-color);
       padding: 0px 20px;
-      /* overflow: hidden; */
-      /* background-image: ; */
+      height: 100vh;
+      width: 100%;
+      overflow: hidden;
   }
 
   nav {
@@ -50,11 +52,16 @@
   nav h2 {
       position: absolute;
       left: 60px;
-      top: 33px;
+      top: clamp(35px,0.3rem + 1.86vh, 40px);
+      /* clamp(2.063rem, , 3.438rem) */
       font-family: var(--logo-font);
-      font-size: 51px;
+      /* font-size: 51px; */
+      /* font-size: 2.1vw; */
+      font-size: clamp(21px, 2.1vw, 51px);
       font-weight: 700;
       letter-spacing: 10px;
+      height: 100%;
+      align-self: flex-end;
   }
 
   .nav-links ul {
@@ -125,10 +132,11 @@
   }
 
   .slide-track {
-      width: 300vw;
+      width: 400vw;
       display: flex;
       transition: 1s cubic-bezier(0.165, 0.84, 0.44, 1);
       scrollbar-width: none;
+      height: 100vh;
   }
 
   .slide-track::-webkit-scrollbar {
@@ -147,15 +155,16 @@
       justify-content: center;
       align-items: center;
       height: 100%;
+      padding: 20px;
   }
 
   .hero-text {
       text-align: center;
-      margin-top: -60px;
+      margin-top: -80px;
   }
 
   .hero-text h2 {
-      font-size: 60px;
+      font-size: clamp(30px, -0.982rem + 5.71vw, 60px);
       font-family: var(--logo-font);
       font-weight: 700;
       letter-spacing: 15px;
@@ -164,38 +173,40 @@
 
   .hero-text h1 {
       font-family: var(--stylish-font);
-      font-size: 160px;
+      font-size: clamp(40px, -6.071rem + 17.14vw, 160px);
       font-weight: 800;
       letter-spacing: 10px;
+      white-space: nowrap;
   }
 
   .hero-text h4 {
-      font-size: 22px;
+      font-size: clamp(13px, 1.29vw, 21px);
       font-family: var(--tiny-font);
       font-weight: 500;
       letter-spacing: 9px;
   }
 
   .hero-img img {
-      width: 1000px;
+      width: clamp(300px, 60vw, 1000px);
+      max-width: 100%;
       margin-top: -20px;
       /* margin-left:-50px; */
   }
 
-  .img-list {
-      display: flex;
-      gap: 40px;
-      position: absolute;
-      left: 250px;
-      bottom: 180px;
-  }
+ .img-list {
+    display: flex;
+    gap: clamp(12px, 3vw, 40px);
+    position: absolute;
+    left: clamp(1.25rem, -15.179rem + 32.86vw, 15.625rem);
+    bottom: clamp(250px, 15vh, 180px);
+}
 
-  .img-list img {
-      width: 90px;
-      height: 90px;
-      border-radius: 10px;
-      transition: all 0.5s;
-  }
+.img-list img {
+    width: clamp(50px, 6vw, 90px);
+    height: clamp(50px, 6vw, 90px);
+    border-radius: 10px;
+    transition: 0.4s ease-out;
+}
 
   .img-list img:hover {
       transform: scale(1.06) translateY(-5px);
@@ -223,13 +234,14 @@
 
   /* MENU */
   .menu-container {
-      align-self: center;
+      align-content: center;
       width: 100vw;
       justify-items: center;
-      /* position: relative; */
+      position: relative;
+      height: 100%;
   }
 
-  #menu-bg {
+  #leaf-overlay {
       position: absolute;
       top: 0;
       right: 380px;
@@ -237,14 +249,14 @@
       transition: 0.5s ease-out;
   }
 
-  #menu-bg:hover {
+  #leaf-overlay:hover {
       transform: scale(1.05);
   }
 
   .dish-container {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr 1fr;
-      gap: 60px;
+      gap: clamp(5px, 1rem + 2.89vw, 60px);
       margin: 40px 40px;
   }
 
@@ -311,12 +323,12 @@
       border: 1px dashed var(--font-color);
       padding: 40px;
       border-radius: 30px;
-      width: 45%;
+      width: clamp(60vw, 1.875rem + 2vw, 50vw);
       height: auto;
   }
 
   .price-box h2 {
-      font-size: 50px;
+      font-size: clamp(1.875rem, 0.625rem + 2.67vw, 3.125rem) ;
       font-family: var(--logo-font);
       font-weight: 700;
       letter-spacing: 15px;
@@ -329,7 +341,7 @@
       justify-content: space-between;
       font-family: var(--logo-font);
       font-weight: 600;
-      font-size: 30px;
+      font-size: clamp(15px, 2vw, 30px);
       margin-top: 20px;
   }
 
@@ -340,12 +352,54 @@
 
   .price-box span {
       font-family: var(--tiny-font);
-      font-size: 20px;
+      font-size: clamp(10px, 1.5vw, 20px);
       padding-bottom: 50px;
       font-weight: 100;
   }
 
+
   /* ABOUT US */
-  /* .about-us-container {
+  .about-us-container {
     width: 100vw;
-  } */
+    height:100vh;
+    position: relative;
+  }
+
+  .about-content {
+       width: 80%;
+       height:100vh;
+    overflow: hidden;
+  }
+
+  .about-text {
+    width: 50vw;
+    height:clamp(20%, 70vw, 90%);
+    align-content: center;
+    justify-self: center;
+    margin-left: -10vw;
+  }
+  .about-text h2 {
+    font-family: var(--logo-font);
+    font-size: clamp(35px, 5vw, 80px);
+    font-weight: 700;
+      letter-spacing: 7px;
+      margin-bottom: 20px;
+  }
+
+  .about-text p {
+    font-family: var(--tiny-font);
+    font-size:clamp(13px, 1vw, 20px);
+    /* word-spacing: 3px; */
+    letter-spacing: 2px;
+    line-height: 30px;
+    width:60%;
+  }
+
+  .about-img img{
+    /* padding-top:300px;
+    padding-left: 200px; */
+    position: absolute;
+    width: 50%;
+    bottom: 0;
+    right:5%;
+  }
